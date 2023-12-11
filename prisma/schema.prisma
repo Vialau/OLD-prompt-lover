@@ -6,24 +6,23 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model AuthUser {
-  id           String        @id @unique
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   auth_session AuthSession[]
   auth_key     AuthKey[]
-
-  // here you can add custom fields for your user
-  // e.g. name, email, username, roles, etc.
-  username String @unique
+  email String @unique
+  firstname String 
+  lastname String
 
   @@map("auth_users")
 }
 
 model AuthSession {
-  id             String   @id @unique
+  id             String   @id @map("_id")
   user_id        String
   active_expires BigInt
   idle_expires   BigInt
@@ -34,7 +33,7 @@ model AuthSession {
 }
 
 model AuthKey {
-  id              String   @id @unique
+  id              String   @id @map("_id")
   hashed_password String?
   user_id         String
   primary_key     Boolean

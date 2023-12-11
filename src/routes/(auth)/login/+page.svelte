@@ -10,21 +10,21 @@
 	<h1>Log in</h1>
 
 	<form method="POST" class="mt-8 space-y-8" use:enhance>
-		<label class="label" for="username">
-			<span class="block">Username</span>
+		<label class="label" for="email">
+			<span class="block">Email</span>
 			<input
 				class="input"
 				type="text"
-				name="username"
-				id="username"
-				class:input-error={$errors.username}
-				aria-invalid={$errors.username ? 'true' : undefined}
-				bind:value={$form.username}
-				{...$constraints.username}
+				name="email"
+				id="email"
+				class:input-error={$errors.email}
+				aria-invalid={$errors.email ? 'true' : undefined}
+				bind:value={$form.email}
+				{...$constraints.email}
 			/>
 		</label>
-		{#if $errors.username}
-			<span class="text-red-400">{$errors.username}</span>
+		{#if $errors.email}
+			<span class="text-red-400">{$errors.email}</span>
 		{/if}
 
 		<label class="label" for="password">
@@ -45,8 +45,8 @@
 		{/if}
 
 		<p>
-			Don't have an account?
-			<a href="/register">Register</a>
+			Pas encore de compte ?
+			<a href="/register">S'inscrire</a>
 		</p>
 
 		<button class="btn variant-filled" type="submit">Log in</button>

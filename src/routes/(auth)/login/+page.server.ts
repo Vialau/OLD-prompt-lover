@@ -23,14 +23,14 @@ export const actions = {
 
 		try {
 			const key = await auth.useKey(
-				'username',
-				form.data.username,
+				'email',
+				form.data.email,
 				form.data.password
 			)
 			const session = await auth.createSession(key.userId)
 			locals.auth.setSession(session)
 		} catch (error) {
-			return setError(form, 'username', 'Invalid credentials')
+			return setError(form, 'email', 'Invalid credentials')
 		}
 	},
 }

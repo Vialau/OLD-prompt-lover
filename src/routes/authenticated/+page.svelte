@@ -4,5 +4,5 @@
 
 <div class="p-4">
 	<h1>Profile</h1>
-	<p class="mt-4 capitalize">Welcome, {data.user.username}!</p>
+	<p class="mt-4 capitalize">Welcome, {data.user.email}!</p>
 </div>

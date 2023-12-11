@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-	<title>Enterprise</title>
-	<link rel="icon" href="https://fav.farm/🔥" />
+	<title>Prompt Lover</title>
+	<link rel="icon" href="https://fav.farm/🖥" />
 </svelte:head>
 
 <Heading />
